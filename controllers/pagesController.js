@@ -40,6 +40,9 @@ module.exports = {
   getAdminPost_add(req, res) {
     res.render('admin/post-add.ejs')
   },
+  getAdminPosts(req, res) {
+    res.render('admin/posts.ejs')
+  },
   getAdminProfile(req, res) {
     res.render('admin/profile.ejs')
   },
