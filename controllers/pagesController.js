@@ -22,7 +22,11 @@ module.exports = {
   // 返回后台页面,做为约定,在后台页面请求之前添加前缀:/admin
   // 1.返回后台首页
   getAdminIndexPage(req,res){
+    // if (req.session.isLogin && req.session.isLogin == 'true') {
       res.render('admin/index.ejs')
+    // } else {
+    //   res.redirect('/login')
+    //   }
   },
   // 2.返回分类页面
   getAdminCategoriesPage(req,res){
