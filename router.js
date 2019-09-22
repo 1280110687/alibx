@@ -1,6 +1,8 @@
 const express = require('express')
 const pagesController = require('./controllers/pagesController.js')
-const usersController = require('./controllers/usersController.js')
+const usersController = require('./controllers/usersController')
+const postsController = require('./controllers/postsController')
+const cateContoller = require('./controllers/cateController')
 
 // 创建路由模块对象
 const router = express.Router()
@@ -25,8 +27,11 @@ router.get('/', pagesController.getIndexPage)
   .get('/admin/settings', pagesController.getAdminSettings)
   .get('/admin/slides', pagesController.getAdminSlides)
   .get('/admin/users',pagesController.getAdminUsers)
-      //正面的路由是业务处理
+  //下面的路由是业务处理
   .post('/login', usersController.login)
-  .get('/loginOut',usersController.loginOut)
+  .get('/loginOut', usersController.loginOut)
+
+  .get('/getPostList', postsController.getPostList)
+  .get('/getCateList',cateContoller.getCateList)
 // 暴露
 module.exports = router
