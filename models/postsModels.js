@@ -22,7 +22,7 @@ module.exports = {
     // statu：状态查询条件
     getPostList(query,callback){
         // { pageSize: '4', pageNum: '1', cate: '3', statu: 'published' }
-        console.log(query)
+        // console.log(query)
         let sql = `select posts.*,users.nickname,categories.name
                     from posts
                     join users on posts.user_id = users.id

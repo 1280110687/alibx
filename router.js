@@ -3,6 +3,7 @@ const pagesController = require('./controllers/pagesController.js')
 const usersController = require('./controllers/usersController')
 const postsController = require('./controllers/postsController')
 const cateContoller = require('./controllers/cateController')
+const uploadController = require('./controllers/uploadController')
 
 // 创建路由模块对象
 const router = express.Router()
@@ -31,7 +32,11 @@ router.get('/', pagesController.getIndexPage)
   .post('/login', usersController.login)
   .get('/loginOut', usersController.loginOut)
 
+
   .get('/getPostList', postsController.getPostList)
-  .get('/getCateList',cateContoller.getCateList)
+  .get('/getCateList', cateContoller.getCateList)
+  //文件上传
+  .get('/uploadFile',uploadController.uploadFile)
+
 // 暴露
 module.exports = router
